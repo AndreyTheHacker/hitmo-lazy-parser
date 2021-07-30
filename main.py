@@ -23,7 +23,8 @@ def getmusicbyurl(url):
     return q[:q.find('"')].replace("\\","")
 
 tracks = searchmusic(input("Search: "))
-for i in tracks:print(i)
+for i, v in enumerate(tracks):
+    print("%d: %s"%(i,v.split("/")[-1].replace("_"," ")))
 a = input("Choose [%d-%d]: "%(0,len(tracks)-1))
 b = input("Select player [mpv]: ")
 if b=="": b="mpv"
